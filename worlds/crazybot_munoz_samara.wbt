@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.9503176778631449 0.2892405368817022 0.11504878515301532 0.7359799576710041
-  position 0.2649445714117652 1.4236818632302617 1.4054789881240943
+  orientation -0.24148184377255302 0.8980585008832557 0.36766485842343977 2.0591096815272905
+  position 1.3927931971472762 1.295648357399322 0.0016058767844085373
 }
 TexturedBackground {
 }
@@ -41,6 +41,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
+        axis 0 0 1
         anchor -0.05 0 0.065
       }
       endPoint Solid {
@@ -66,6 +67,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
+        axis 0 0 1
         anchor -0.05 0 -0.065
       }
       endPoint Solid {
@@ -84,4 +86,6 @@ Robot {
     }
   ]
   boundingObject USE SH_BODY
+  physics Physics {
+  }
 }
