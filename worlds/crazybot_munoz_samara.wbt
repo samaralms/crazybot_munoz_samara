@@ -2,12 +2,86 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.6931032800836722 0.6931032800836722 0.1980295085953349 0.75
-  position 1.2 1.6 2.3
+  orientation -0.9503176778631449 0.2892405368817022 0.11504878515301532 0.7359799576710041
+  position 0.2649445714117652 1.4236818632302617 1.4054789881240943
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 Floor {
+}
+Robot {
+  translation 0 0.2 0
+  children [
+    DEF SH_BODY Group {
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.9372549019607843 0.1607843137254902 0.1607843137254902
+          }
+          geometry Box {
+            size 0.25 0.08 0.1
+          }
+        }
+        Transform {
+          translation 0.1075 -0.0575 0
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.9294117647058824 0.8313725490196079 0
+              }
+              geometry Sphere {
+                radius 0.0175
+              }
+            }
+          ]
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.05 0 0.065
+      }
+      endPoint Solid {
+        translation -0.05 0 0.065
+        rotation 1 0 0 1.5708
+        children [
+          DEF SH_WHEEL Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.03
+              radius 0.075
+            }
+          }
+        ]
+        boundingObject USE SH_WHEEL
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.05 0 -0.065
+      }
+      endPoint Solid {
+        translation -0.05 0 -0.065
+        rotation 1 0 0 1.5708
+        children [
+          Shape {
+          }
+          USE SH_WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE SH_WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  boundingObject USE SH_BODY
 }
