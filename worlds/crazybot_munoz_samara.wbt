@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.24148184377255302 0.8980585008832557 0.36766485842343977 2.0591096815272905
-  position 1.3927931971472762 1.295648357399322 0.0016058767844085373
+  orientation -0.023553654224292637 0.9750517707592415 0.2207244202890786 3.1846159113400585
+  position 0.09107199240843275 2.03749285154956 -3.5917704610213583
 }
 TexturedBackground {
 }
@@ -97,6 +97,24 @@ Robot {
         physics Physics {
         }
       }
+    }
+    DistanceSensor {
+      translation 0.13 0 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5411764705882353 0.8862745098039215 0.20392156862745098
+          }
+          geometry Box {
+            size 0.02 0.02 0.02
+          }
+        }
+      ]
+      lookupTable [
+        0 0 0
+        0.02 0 0
+        5 1660 0
+      ]
     }
   ]
   boundingObject USE SH_BODY
