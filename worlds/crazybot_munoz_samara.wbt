@@ -3,7 +3,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.020115650204698618 0.9908708677938788 0.13330522860806246 3.2594789210887316
-  position 0.032957123900134375 0.9721080790787477 -2.028809004749039
+  position -0.1013317508503323 1.2595544232600435 -3.0839151451434708
 }
 TexturedBackground {
 }
@@ -118,6 +118,7 @@ Robot {
           }
         }
       ]
+      name "distance_s"
       lookupTable [
         0 0 0
         0.02 0 0
@@ -129,4 +130,5 @@ Robot {
   boundingObject USE SH_BODY
   physics Physics {
   }
+  controller "crazybot_munoz_samara"
 }
