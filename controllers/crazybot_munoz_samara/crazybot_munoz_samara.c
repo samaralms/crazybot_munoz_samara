@@ -27,6 +27,8 @@
 #define TIME_STEP 64
 double b=0;
 double e=0;
+double a,c,d,f;
+double Fin_Lin_Vel;
 
 /*
  * This is the main program.
@@ -67,7 +69,7 @@ int main(int argc, char **argv)
      
      
 
- double a,c,d,f;
+ 
   
   int key = wb_keyboard_get_key();
   
@@ -127,6 +129,11 @@ int main(int argc, char **argv)
      printf("Linear Velocity Right: %lf  \t", (f/0.064)*0.075);
      printf("Right RPM: %f \t", (f/0.064)*(60/(2*3.1416)));
      
+      Fin_Lin_Vel= (((c/0.064)*0.075) + (f/0.064)*0.075)/2;
+     
+     printf("Final Linear Velocity: %lf \t",Fin_Lin_Vel);
+     
+    
       fflush(stdout);
     
     
